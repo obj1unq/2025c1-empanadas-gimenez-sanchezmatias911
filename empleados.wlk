@@ -2,23 +2,22 @@
 object dueño {
   var fondo = 300000
   method pagarSueldo(empleado){
-    
+    empleado.cobrarSueldo()
+    fondo = fondo - (empleado.sueldo())
   }
-  method fondo{
+  method fondo(){
     return fondo
   }
-  
-  
 }
 object galvan  {
   method cobrarSueldo(){
-    totalCobrado = totalCobrado + sueldo
+  
+  }
+  method sueldo(){
+    return sueldo
   }
   var sueldo = 15000
-  method totalCobrado = 0
-  method cambiarSueldo(nuevoSueldo){
-    sueldo = nuevoSueldo
-  }
+  
 }
 object baigorria {
   method vender(cantidad){
@@ -27,7 +26,7 @@ object baigorria {
   method sueldo (){
     return sueldo
   }
-  method cobrar(){
+  method cobrarSueldos(){
     totalCobrado = totalCobrado + sueldo
     empanadasVendidas= 0 // cuando cobra el sueldo se reinicia las empanadas que vendio 
   }
