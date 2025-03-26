@@ -1,2 +1,5 @@
 //Escribir aqui los objetos
-dasdsada
+object empleado {
+
+}
+
