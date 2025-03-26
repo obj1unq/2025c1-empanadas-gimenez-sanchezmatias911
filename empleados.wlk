@@ -1,5 +1,7 @@
 //Escribir aqui los objetos
-object empleado {
-
+object dueño {
+  var fondo = 300000
 }
+object galvan  {}
+object baigorria {}
 
