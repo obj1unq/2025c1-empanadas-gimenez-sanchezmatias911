@@ -1,44 +1,55 @@
 
-object duenio{
+object gimenez{
   var fondo = 300000
   
   method pagarSueldo(empleado){
     empleado.cobrarSueldo()
     fondo = fondo - (empleado.sueldo())
   }
+
   method cambiarSueldo(empleado,cantidad){
     empleado.sueldo(cantidad)
   }
+
   method fondo(){
     return fondo
   }
 }
-object galvan{
+object galvan{ // revisar metodos de deuda,gastar,dinero
 
   var dinero = 0
   var deuda = 0
   var sueldo = 15000
   
-  
   method gastar(cantidad){
-    if (cantidad<dinero) {// si le alcanza gasta
-    dinero = dinero - cantidad}
-    else { 
-             deuda= deuda + (dinero-cantidad).abs()
-             dinero= 0   //si no le alcanza, aumenta su deuda
+    if (dinero<cantidad){
+      deuda = deuda + ((dinero-cantidad).abs()) // ejemplo: si dinero=100 y cantidad=200, a deuda se le suma el valor absoluto de (dinero-cantidad)
+      dinero=0
+    }
+    else{
+      dinero = dinero - cantidad
+    }
+   
   }
+
+  
+
   method deuda(){
-    return deuda.abs()
+    return deuda
   }
-  method cobrarSueldo(){// CUANDO COBRA SUELDO PAGA SUS DEUDAS Y LO QUE SOBRA VA A DINERO
+
+  method cobrarSueldo(){// cuando cobra,cancelar deudas y lo restante sumar al dinero
     dinero = dinero + sueldo 
   }
+
   method sueldo(cantidad){
     sueldo = cantidad
   }
+
   method sueldo(){
     return sueldo
   }
+
   method totalCobrado(){}
   
 }
@@ -54,8 +65,9 @@ object baigorria{
   }
 
   method sueldo (){
-    return sueldo
+    
   }
+
   method sueldo(cantidad){
 
   }
@@ -66,6 +78,7 @@ object baigorria{
     empanadasVendidas= 0 
 
   }
+
   method totalCobrado(){
     return totalCobrado
   }
