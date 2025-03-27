@@ -38,9 +38,19 @@ object galvan{ // revisar metodos de deuda,gastar,dinero
     return deuda
   }
 
-  method cobrarSueldo(){// cuando cobra,cancelar deudas y lo restante sumar al dinero
-    dinero = dinero + sueldo 
+  method cobrarSueldo(){// cuando cobra,cancelar deudas y lo restante sumar al dinero(pensar en subtarea)
+    
+    var balanceFinanciero = sueldo - deuda // calcula dinero que me quedaria cancelando deuda
+    
+    if (balanceFinanciero<0){
+      deuda = deuda - sueldo // usa todo el sueldo para pagar deuda
+      }
+    else{ // si sobra sueldo al cancelar deuda, lo suma a su dinero
+      dinero = dinero + balanceFinanciero
+      deuda = 0
+    }
   }
+  
 
   method sueldo(cantidad){
     sueldo = cantidad
