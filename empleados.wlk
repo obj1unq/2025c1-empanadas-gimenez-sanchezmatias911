@@ -14,9 +14,22 @@ object duenio{
   }
 }
 object galvan{
+  
+  var dinero = 0
+  var deuda = 0
   var sueldo = 15000
   
-  method cobrarSueldo(){
+  
+  method gastar(cantidad){
+    if (cantidad<dinero) {
+    dinero = dinero - cantidad}
+    else {
+  }
+  method deuda(){
+    return deuda.abs()
+  }
+  method cobrarSueldo(){// CUANDO COBRA SUELDO PAGA SUS DEUDAS Y LO QUE SOBRA VA A DINERO
+    dinero = dinero + sueldo 
   }
   method sueldo(cantidad){
     sueldo = cantidad
@@ -24,14 +37,15 @@ object galvan{
   method sueldo(){
     return sueldo
   }
+  method totalCobrado(){}
   
 }
 object baigorria{
 
   var empanadasVendidas = 0
-  //var totalCobrado = 0
-  //var sueldo  = empanadasVendidas * 15
-  var sueldo = 0
+  var totalCobrado = 0
+
+  
 
   method vender(cantidad){
     empanadasVendidas = empanadasVendidas + cantidad 
@@ -45,10 +59,13 @@ object baigorria{
   }
   
   method cobrarSueldo(){
-    sueldo = empanadasVendidas * 15
-   // totalCobrado = totalCobrado + self.sueldo()
-    //empanadasVendidas= 0 // cuando cobra el sueldo se reinicia las empanadas que vendio 
+    totalCobrado = totalCobrado +  empanadasVendidas * 15
+   
+    empanadasVendidas= 0 
 
+  }
+  method totalCobrado(){
+    return totalCobrado
   }
 }
 
