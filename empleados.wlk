@@ -14,16 +14,18 @@ object duenio{
   }
 }
 object galvan{
-  
+
   var dinero = 0
   var deuda = 0
   var sueldo = 15000
   
   
   method gastar(cantidad){
-    if (cantidad<dinero) {
+    if (cantidad<dinero) {// si le alcanza gasta
     dinero = dinero - cantidad}
-    else {
+    else { 
+             deuda= deuda + (dinero-cantidad).abs()
+             dinero= 0   //si no le alcanza, aumenta su deuda
   }
   method deuda(){
     return deuda.abs()
