@@ -82,7 +82,7 @@ object baigorria {
   }
   
   method cobrarSueldo() {
-    totalCobrado += empanadasVendidas * precioEmpanadas
+    totalCobrado += sueldo()
     
     empanadasVendidas = 0
   }
