@@ -14,7 +14,7 @@ object gimenez {
   
   method fondo() = fondo
   method empanadasPrecio(empleado,precio){// preguntar por polimorfismo 
-    empleado.
+    empleado.empanadasPrecio(precio)
   }
 }
 
@@ -66,14 +66,14 @@ object baigorria {
   //MODIFICAR PRECIO DE EMPANADAS, LO DEBE CAMBIAR EL DUENIO
   var empanadasVendidas = 0
   var totalCobrado = 0
-  var precioEmpanada = 15
+  var precioEmpanadas = 15
   
   method vender(cantidad) {
     empanadasVendidas += cantidad
   }
   
   method sueldo() { // si uso el valor de este metodo sin return falla
-    return empanadasVendidas * empanadasVendidas
+    return empanadasVendidas * precioEmpanadas
     
   }
   
@@ -82,16 +82,18 @@ object baigorria {
   }
   
   method cobrarSueldo() {
-    totalCobrado += empanadasVendidas * empanadasVendidas
+    totalCobrado += empanadasVendidas * precioEmpanadas
     
     empanadasVendidas = 0
   }
   
   method totalCobrado() = totalCobrado
 
-method empanadasPrecio(_empanadasPrecio){
-  empanadasPrecio = _empanadasPrecio
+method precioEmpanadas(_precioEmpanadas){
+  precioEmpanadas = _precioEmpanadas
 }
+ 
+
 }
 
 
