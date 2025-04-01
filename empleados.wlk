@@ -20,25 +20,27 @@ object gimenez {
 
 object galvan {
   // revisar metodos de deuda,gastar,dinero
-  var dinero = 0
-  var deuda = 0
+ // var dinero = 0
+  //var deuda = 0
+  var saldo = 0
   var sueldo = 15000
   
   method gastar(cantidad) {
-    if (dinero < cantidad) {
+    saldo -= cantidad
+    /*if (dinero < cantidad) {
       deuda += (dinero - cantidad).abs()
       // ejemplo: si dinero=100 y cantidad=200, a deuda se le suma el valor absoluto de (dinero-cantidad)
       dinero = 0
     } else {
       dinero -= cantidad
-    }
+    }*/
   }
   
   method deuda() = deuda
   
   method cobrarSueldo() {
     // cuando cobra,cancelar deudas y lo restante sumar al dinero(pensar en subtarea)
-    var balanceFinanciero = sueldo - deuda
+    /*var balanceFinanciero = self.sueldo() - deuda
     // calcula dinero que me quedaria cancelando deuda
     
     if (balanceFinanciero < 0) {
@@ -47,7 +49,8 @@ object galvan {
       // si sobra sueldo al cancelar deuda, lo suma a su dinero
       dinero += balanceFinanciero
       deuda = 0
-    }
+    }*/
+    saldo += self.sueldo()
   }
   
   method sueldo(_sueldo) {
@@ -61,6 +64,14 @@ object galvan {
   }
   method empanadasPrecio(){}
 }
+/*
+method deuda() = saldo.min(0).abs()
+method dinero(){ //implementar dinero 
+ /* if (self.saldo()<0{
+
+  })
+}*/
+
 
 object baigorria {
   //MODIFICAR PRECIO DE EMPANADAS, LO DEBE CAMBIAR EL DUENIO
@@ -82,7 +93,7 @@ object baigorria {
   }
   
   method cobrarSueldo() {
-    totalCobrado += sueldo()
+    totalCobrado += self.sueldo()
     
     empanadasVendidas = 0
   }
